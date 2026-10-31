@@ -1,0 +1,41 @@
+{{ define "main" -}}
+{{- $posts := where site.RegularPages "Section" "blog" -}}
+<article class="post">
+  <header>
+    <div class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Monday, January 2, 2006" }}</time>
+      <span class="views" data-views="{{ .File.ContentBaseName }}"></span>
+    </div>
+    <h1>{{ .Title }}</h1>
+  </header>
+  <div class="post-grid">
+    <ul class="authors">
+      {{- range .Params.authors }}
+      {{- with index site.Params.authors . }}
+      <li><img src="{{ .avatar }}" alt="avatar" width="40" height="40" class="avatar"> {{ .name }}</li>
+      {{- end }}
+      {{- end }}
+    </ul>
+    <div class="prose">
+      {{- .Content }}
+    </div>
+    <footer>
+      <div class="post-nav">
+        {{- with $posts.Prev . }}
+        <div>
+          <h2>Previous Article</h2>
+          <a href="{{ strings.TrimSuffix "/" .RelPermalink }}">{{ .Title }}</a>
+        </div>
+        {{- end }}
+        {{- with $posts.Next . }}
+        <div>
+          <h2>Next Article</h2>
+          <a href="{{ strings.TrimSuffix "/" .RelPermalink }}">{{ .Title }}</a>
+        </div>
+        {{- end }}
+      </div>
+      <a class="back" href="/" aria-label="Back to the blog">&larr; Back to the blog</a>
+    </footer>
+  </div>
+</article>
+{{- end }}

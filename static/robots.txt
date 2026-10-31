@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://blog.captaincoaster.com
+Sitemap: https://blog.captaincoaster.com/sitemap.xml

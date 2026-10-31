@@ -1,0 +1,105 @@
+---
+title: 'Captain Coaster Updates & Improvements – May to October 2025'
+date: '2025-11-20'
+tags: ['news', 'announcement', 'behind-the-scenes', 'captain-coaster']
+draft: false
+summary: 'From beefed-up rankings to the brand-new Captain’s Review, smarter filters and revamped profile overview, Captain Coaster saw tons of meaningful improvements for the community from May to October 2025!'
+authors: ['richard']
+---
+
+Welcome back, coaster fans! From backend improvements to brand‑new features and smarter tools for the community, here’s everything that landed on Captain Coaster between **May and October 2025**.
+
+## May 2025
+
+### 🔧 Mail DNS update
+
+We switched our email service from **Mailjet** to **Amazon SES** to reduce operational costs and improve reliability.
+
+---
+
+## July 2025
+
+### 🚀 Improved World Roller Coaster Rankings calculation
+
+We refined the requirements for a coaster to enter the **World Roller Coaster Rankings**:
+
+- Minimum comparisons between Coaster A and Coaster B increased from **3 → 4**.
+- Minimum total duels for a coaster increased from **350 → 400**.
+- Minimum duels for **elite coasters** (score > 95%) increased from **600 → 650**.
+
+👉 These adjustments led to a temporary removal of many coasters from the Rankings — before they naturally returned once the new thresholds were met.
+
+---
+
+## October 2025
+
+### 🚀 Captain's Review — New on coaster Pages!
+
+A brand‑new section now appears between images and ratings on coaster pages: **Captain's Review**!
+
+👉 This feature uses Amazon’s **Bedrock AI** to generate:
+
+- A summary of user reviews (based on at least 20 reviews, up to 600 total), and
+- Dynamic highlights of **pros** and **cons**.
+
+Here is Captain's Review for [Ride to Happiness at Plopsaland Belgium](https://captaincoaster.com/en/coasters/3308/ride-to-happiness-plopsaland-de-panne):
+
+![Captain's Review example](/images/news/captain-review.webp)
+
+📝 **Note**: Currently available only in **English** and only for the **World Top 100 Coasters**, but it will gradually expand across the rest of the site.
+
+### 🚀 New filters on the Ranking
+
+You can now fine‑tune the Ranking view using three new filters:
+
+- **Operating** – hide coasters currently not operating
+- **Not ridden yet** – hide coasters you haven’t rated yet
+- **New in Ranking** – hide coasters newly added to the monthly Ranking
+
+![Ranking filters](/images/news/ranking-filters.jpg)
+
+📝 **Note**: These filters are **disabled by default**, giving you full control over how you explore the rankings.
+
+### 🚀 Revamped profile overview
+
+Profile ovierview received a full redesign — clearer and more visual. Here's an example with my profile:
+
+![Profile overview](/images/news/profile-overview.jpg)
+
+New improvements include:
+
+- A distinction between coasters ridden in the **World Top 100** and those in the **World Top 100 operating coasters**. Here’s an example with someone who has ridden 82 coasters from the World Top 100 — including 80 that are currently operating:
+
+![Top 100 operating coasters stats](/images/news/top-100-operating-coasters-stat.jpg)
+
+- A brand‑new **Favorite Manufacturer** stat, determined by the manufacturer most represented in the ten first coasters of your personal Top Coasters.
+
+### 🚀 Sign in & register security improvements
+
+We've added **email verification** and a **rate limiter** to login and signup to help reduce spam accounts and improve overall platform security.
+
+### 🚀 Duplicate image detection
+
+To reduce redundant uploads, a **hash‑based check** now prevents users from submitting duplicate images.
+
+### 🐛 Park page links in ratings lists
+
+Links to park pages in the ratings and reviews lists were incorrectly pointing to a 404. This has now been corrected.
+
+### 🐛 “Operating” filter on the Map
+
+The **Operating** filter was disabled whenever no `parkslug` was present in the URL. It is now enabled by default, as intended.
+
+### 🐛 Disabled account ratings no longer displayed
+
+The homepage previously included ratings and reviews from disabled accounts — these are now fully excluded.
+
+### 🐛 Missing watermarks
+
+About **6,600 images** slipped through watermark processing for users who enabled it. These images have now been properly regenerated.
+
+---
+
+Thanks for reading — and as always, stay tuned for more updates as we continue polishing and expanding Captain Coaster for the whole community! 🎢🔥
+
+— The Captain Coaster Team

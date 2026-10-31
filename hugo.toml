@@ -1,0 +1,30 @@
+baseURL = "https://blog.captaincoaster.com/"
+locale = "en-us"
+defaultContentLanguage = "en"
+title = "Captain Coaster Blog"
+disableKinds = ["section", "taxonomy", "term"]
+
+[markup.goldmark.extensions.typographer]
+disable = true
+
+[outputs]
+home = ["html", "rss"]
+
+[outputFormats.rss]
+baseName = "feed"
+
+[params]
+description = "Official blog for Captain Coaster - The ultimate guide for roller coaster enthusiasts"
+author = "Captain Coaster Team"
+email = "contact@captaincoaster.com"
+instagram = "https://www.instagram.com/captain.coaster"
+appUrl = "https://captaincoaster.com"
+socialImage = "/images/twitter-card.png"
+
+[params.authors.florian]
+name = "Florian"
+avatar = "/images/florian.jpg"
+
+[params.authors.richard]
+name = "richardcrete"
+avatar = "/images/richard.jpg"

@@ -1,0 +1,31 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.Title }}</title>
+    <link>{{ site.BaseURL }}</link>
+    <description>{{ site.Params.description }}</description>
+    <language>{{ site.Language.Locale }}</language>
+    {{- $contact := printf "%s (%s)" site.Params.email site.Params.author }}
+    <managingEditor>{{ $contact }}</managingEditor>
+    <webMaster>{{ $contact }}</webMaster>
+    {{- $posts := where site.RegularPages "Section" "blog" }}
+    {{- with $posts }}
+    <lastBuildDate>{{ (index . 0).Date.UTC.Format "Mon, 02 Jan 2006 15:04:05 GMT" }}</lastBuildDate>
+    {{- end }}
+    <atom:link href="{{ "feed.xml" | absURL }}" rel="self" type="application/rss+xml"/>
+    {{- range $posts }}
+    {{- $url := strings.TrimSuffix "/" .Permalink }}
+    <item>
+      <guid>{{ $url }}</guid>
+      <title>{{ .Title }}</title>
+      <link>{{ $url }}</link>
+      <description>{{ .RawSummary }}</description>
+      <pubDate>{{ .Date.UTC.Format "Mon, 02 Jan 2006 15:04:05 GMT" }}</pubDate>
+      <author>{{ $contact }}</author>
+      {{- range .Params.tags }}
+      <category>{{ . }}</category>
+      {{- end }}
+    </item>
+    {{- end }}
+  </channel>
+</rss>

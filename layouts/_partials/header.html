@@ -1,0 +1,10 @@
+<header class="site-header">
+  <a class="brand" href="/" aria-label="{{ site.Title }}">
+    {{- partial "logo.html" . }}
+    <span class="brand-title">{{ site.Title }}</span>
+  </a>
+  <nav>
+    <a href="/about">About</a>
+    <a href="{{ site.Params.appUrl }}" target="_blank" rel="noopener noreferrer">Captain Coaster ↗</a>
+  </nav>
+</header>

@@ -1,0 +1,3 @@
+{{- $internal := or (hasPrefix .Destination "/") (hasPrefix .Destination "#") -}}
+<a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if not $internal }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Text }}</a>
+{{- /**/ -}}

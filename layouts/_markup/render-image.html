@@ -1,0 +1,3 @@
+{{- $size := images.Config (path.Join "static" .Destination) -}}
+<img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}" width="{{ $size.Width }}" height="{{ $size.Height }}" loading="lazy">
+{{- /**/ -}}

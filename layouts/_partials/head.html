@@ -1,0 +1,61 @@
+{{- $isPost := eq .Section "blog" -}}
+{{- $is404 := eq .Kind "404" -}}
+{{- $fullTitle := site.Title -}}
+{{- if not (or .IsHome $is404) }}{{ $fullTitle = printf "%s | %s" .Title site.Title }}{{ end -}}
+{{- $socialTitle := cond $isPost .Title $fullTitle -}}
+{{- $description := cond $isPost .RawSummary site.Params.description -}}
+{{- $url := strings.TrimSuffix "/" .Permalink -}}
+{{- $image := absURL site.Params.socialImage -}}
+{{- $authors := slice -}}
+{{- range .Params.authors }}{{ $authors = $authors | append (index site.Params.authors .).name }}{{ end -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ $fullTitle }}</title>
+<meta name="description" content="{{ $description }}">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1">
+{{- if not $is404 }}
+<link rel="canonical" href="{{ $url }}">
+{{- end }}
+<link rel="alternate" type="application/rss+xml" href="{{ "feed.xml" | absURL }}">
+<link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="preload" href="/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+{{- $css := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+<meta property="og:title" content="{{ $socialTitle }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ $url }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="{{ $image }}">
+<meta property="og:type" content="{{ cond $isPost "article" "website" }}">
+{{- if $isPost }}
+<meta property="article:published_time" content="{{ .Date.UTC.Format "2006-01-02T15:04:05.000Z" }}">
+<meta property="article:modified_time" content="{{ .Lastmod.UTC.Format "2006-01-02T15:04:05.000Z" }}">
+{{- range $authors }}
+<meta property="article:author" content="{{ . }}">
+{{- end }}
+{{- end }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $socialTitle }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ $image }}">
+{{- if $isPost }}
+{{- $people := slice }}
+{{- range $authors }}{{ $people = $people | append (dict "@type" "Person" "name" .) }}{{ end }}
+{{- $ld := dict
+  "@context" "https://schema.org"
+  "@type" "BlogPosting"
+  "headline" .Title
+  "datePublished" (.Date.UTC.Format "2006-01-02T15:04:05.000Z")
+  "dateModified" (.Lastmod.UTC.Format "2006-01-02T15:04:05.000Z")
+  "description" $description
+  "image" $image
+  "url" $url
+  "author" $people }}
+<script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
+{{- $js := resources.Get "js/views.js" | minify | fingerprint }}
+<script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{- end }}

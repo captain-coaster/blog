@@ -1,0 +1,70 @@
+---
+title: 'Captain Coaster News & Improvements – April to Early May 2025'
+date: '2025-05-09'
+tags: ['news', 'announcement', 'behind-the-scenes', 'captain-coaster']
+draft: false
+summary: 'From fresh profile options to smarter search and a brand-new blog, Captain Coaster got a whole lot better for the community this April and early May 2025!'
+authors: ['richard']
+---
+
+Spring is in full swing, and so are the updates on Captain Coaster! We’ve rolled out some exciting new features, minor tweaks, and a couple of bug fixes to improve your experience. Let’s take a look at what’s new 👇
+
+## April 2025
+
+### 🚀 Custom display names are here!
+
+This long-awaited feature has arrived: you can now **change your first and last name** as displayed on your profile — even if you use Google to sign in. More flexibility to show up how _you_ want!
+
+👉 To do this, head to your **profile settings**, which now live on a [brand-new dedicated page](https://captaincoaster.com/en/profile/settings), accessible from the profile menu:
+
+![Profile form](/images/news/profile-form.jpg)
+![Profile menu](/images/news/profile-menu.jpg)
+
+📝 **Note**: the profile page URL has changed to [/profile](https://captaincoaster.com/en/profile).
+
+### 🚀 Park former names now visible
+
+Following the addition of coasters former names earlier in April, we’re now showing **former names of parks** too! These appear just below the current park name. For example, here’s **Holiday Park**, which used to be **Pfälzer Märchenpark**, and has recently become [Plopsaland Deutschland](https://captaincoaster.com/en/parks/21/plopsaland-deutschland):
+
+![Park former names](/images/news/parks-former-names.jpg)
+
+🕵️‍♀️ These former names are also **searchable**! Here’s how it looks when searching for "Holiday Park":
+
+![Search example](/images/news/parks-former-names-search.jpg)
+
+### 🚀 Captain Coaster Blog now live!
+
+As you can see, we’ve launched the **Captain Coaster Blog** 🎉
+You can access it directly from the main site menu — a new space to share stories, updates, and insights from the coaster community!
+
+![Blog menu](/images/news/blog-menu.jpg)
+
+### 🚀 Discord notifications for new reports
+
+All new content reports now get posted to a dedicated **Discord channel**, helping the moderation team stay informed in real-time.
+
+### 🐛 Missing Spanish translations
+
+Several pages were missing **Spanish translations**, especially the [How does the ranking works?](https://captaincoaster.com/en/ranking/learn-more) and [Terms & Conditions](https://captaincoaster.com/en/terms-conditions) pages. These have now been fixed — and a few translation tweaks were made across other languages as well.
+
+---
+
+## May 2025
+
+### 🚀 Search page now available!
+
+You’ll now find a **“See all results”** link in quick search results!
+
+![Search page input](/images/news/search-page-input.jpg)
+
+Clicking it takes you to a [dedicated search results page](https://captaincoaster.com/en/search/) showing all matching **coasters, parks, and users** related to your query — a much easier way to explore everything connected to your search terms.
+
+![Search page](/images/news/search-page.jpg)
+
+📝 **Note**: The old search page — the one that lets you find coasters near your location — has a new home: you’ll now find it at [/nearby](https://captaincoaster.com/en/nearby/).
+
+---
+
+That’s all for now — but we’ve got more in the pipeline, so stay tuned for upcoming features and improvements. Until then, happy riding! 🎢
+
+— The Captain Coaster Team

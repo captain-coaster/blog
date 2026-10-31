@@ -1,0 +1,19 @@
+{{ define "main" -}}
+<div class="page-intro">
+  <h1>{{ .Title }}</h1>
+</div>
+<div class="about">
+  <div class="profile">
+    <img src="{{ .Params.avatar }}" alt="avatar" width="192" height="192" class="avatar">
+    <h3>{{ .Params.name }}</h3>
+    <p>{{ .Params.occupation }}</p>
+    <div class="social">
+      <a href="mailto:{{ site.Params.email }}" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" "mail" }}</a>
+      <a href="{{ site.Params.instagram }}" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" "instagram" }}</a>
+    </div>
+  </div>
+  <div class="prose">
+    {{- .Content }}
+  </div>
+</div>
+{{- end }}
